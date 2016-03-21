@@ -1,2 +1,2 @@
 # QRCodeReader
-QRCodeReader Android boilerplate
+QRCodeReader Android boilerplate zxing library

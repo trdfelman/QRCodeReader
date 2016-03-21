@@ -1,2 +1,2 @@
 # QRCodeReader
-QRCodeReader Android boiler
+QRCodeReader Android boilerplate

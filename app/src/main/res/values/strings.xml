@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">QR Code Reader</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_qrreader">QRReaderActivity</string>
+    <string name="title_activity_hologram">HologramActivity</string>
+    <string name="str_btn_start">Start Scan</string>
+</resources>

@@ -16,17 +16,18 @@ public class HologramActivity extends Activity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        final String qrURl = getIntent().getExtras().getString("qr_result");
+        final String qrResult = getIntent().getExtras().getString("qr_result");
         AlertDialog.Builder yesNO = new AlertDialog.Builder(HologramActivity.this);
-        yesNO.setMessage(qrURl).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+        yesNO.setMessage(qrResult).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                setContentView(R.layout.activity_hologram);
-                mWebView = (WebView) findViewById(R.id.wvElement);
-                String data ="<body style=\"width:100%;height:100%;padding:0px;margin:0px;\"><img style=\"width:100%;height:100%;padding:0px;margin:0px;\" src=\"pikachu.gif\"/></body>";
-                mWebView.loadDataWithBaseURL("file:///android_asset/",data,"text/html","utf-8",null);
 
-                dialogInterface.dismiss();
+                setContentView(R.layout.activity_hologram);
+//                mWebView = (WebView) findViewById(R.id.wvElement);
+//                String data ="<body style=\"width:100%;height:100%;padding:0px;margin:0px;\"><img style=\"width:100%;height:100%;padding:0px;margin:0px;\" src=\"pikachu.gif\"/></body>";
+//                mWebView.loadDataWithBaseURL("file:///android_asset/",data,"text/html","utf-8",null);
+//
+//                dialogInterface.dismiss();
 
             }
         }).setNegativeButton("No", new DialogInterface.OnClickListener() {

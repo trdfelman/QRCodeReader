@@ -16,7 +16,7 @@ public class HologramActivity extends Activity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        final String qrURl = getIntent().getExtras().getString("qr_resutl");
+        final String qrURl = getIntent().getExtras().getString("qr_result");
         AlertDialog.Builder yesNO = new AlertDialog.Builder(HologramActivity.this);
         yesNO.setMessage(qrURl).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override

@@ -23,19 +23,23 @@ public class QRReaderActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qrreader);
-        new IntentIntegrator(QRReaderActivity.this).initiateScan();
+//        new IntentIntegrator(QRReaderActivity.this).initiateScan();
+        IntentIntegrator integrator = new IntentIntegrator(QRReaderActivity.this);
+        integrator.setCaptureActivity(AnyOrientationCaptureActivity.class);
+        integrator.setOrientationLocked(false);
+        integrator.initiateScan();
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
-        IntentResult scannedResutlt = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
-        if(scannedResutlt != null){
-            String re = scannedResutlt.getContents();
+        IntentResult scannedResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
+        if(scannedResult != null){
+            String re = scannedResult.getContents();
             //check if there is really a result
             if(re != null){
                 Log.e("String content: ", re);
                 Intent holoGram = new Intent(QRReaderActivity.this,HologramActivity.class);
-                holoGram.putExtra("qr_resutl",re);
+                holoGram.putExtra("qr_result",re);
                 holoGram.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(holoGram);
                 finish();
